@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Shovel Hub</title>
+</head>
+
+<body>
+    <div id="divCerrarSesion">
+
+        <label>Bienvenido a The Shovel Hub.</label> <br> <label id="lblLogueado"></label> <br> <!--aura el nombre, o no?-->
+        <input type="button" id="btnCerrarSesion" value="Cerrar Sesion" />
+
+    </div>
+
+    <div id="divLogin">
+
+        <label for="txtUsuario">Usuario:</label>
+        <input type="text" id="txtUsuario" value="usuarioUno" class="limpiarCaja" /><br>
+        <label for="txtContrasenia">Contrasenia:</label>
+        <input type="text" id="txtContrasenia" value="123.Uno" class="limpiarCaja" /><br>
+        <input type="button" id="btnLogin" value="Login" />
+
+        <div id="divLoginMensajes"></div>
+
+    </div>
+<br>
+    <div id="divPostulante" class="postulante" style="display: none;">
+        
+        <input type="button" id="btnMostrarOfertas" value="Mostrar ofertas" />
+        <div id="divOfertaDestacada"></div>
+        <div id="divOfertas" style="display: none;">
+            <table id="tblOfertas" border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Empresa</th>
+                        <th>Vacantes</th>
+                        <th>Postulantes</th>
+                        <th>Estado</th>
+                        <th>Destacada</th>
+                    </tr>
+                </thead>
+                <tbody id="tblOfertasBody"></tbody>
+            </table>
+        
+        </div>
+    </div>
+
+<footer style="background-color: black; color: aliceblue; position: absolute; bottom: 0; width: 100%; text-align: center; "> Grupo 4 - Rodrigo Cano - Juan Capoano </footer>
+
+    <script src="./js/objetos.js"></script>
+    <script src="./js/sistema.js"></script>
+    <script src="./js/precargas.js"></script>
+    <script src="./js/codigoUI.js"></script>
+</body>
+
+</html>
