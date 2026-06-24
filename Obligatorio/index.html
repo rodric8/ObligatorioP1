@@ -4,53 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Shovel Hub</title>
+    <title>The Shovel Hub  </title>
 </head>
 
-<body>
-    <div id="divCerrarSesion">
+<body
+    style="background-color: black; color: aliceblue; font-family: Arial, sans-serif; margin: 0; padding: 0; min-height: 100vh; position: relative; text-align: center;">
+        <h1>The Shovel Hub </h1>
+        <div id="divImagen"><img style="width: 150px; height: 150px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvfKE4B87ZHHOegJp24JREHHSOIaq-e5F9mWP21AuHi0l2DJQbhZJnhz8&s=10"></div>
+    <div id="divCerrarSesion" style="display: none;">
 
-        <label>Bienvenido a The Shovel Hub.</label> <br> <label id="lblLogueado"></label> <br> <!--aura el nombre, o no?-->
+        <label>Bienvenido a The Shovel Hub.</label> <br> <label id="lblLogueado"></label> <br>
+        <!--aura el nombre, o no?-->
         <input type="button" id="btnCerrarSesion" value="Cerrar Sesion" />
 
     </div>
 
     <div id="divLogin">
-
+        <h2>Login</h2>
         <label for="txtUsuario">Usuario:</label>
         <input type="text" id="txtUsuario" value="usuarioUno" class="limpiarCaja" /><br>
         <label for="txtContrasenia">Contrasenia:</label>
         <input type="text" id="txtContrasenia" value="123.Uno" class="limpiarCaja" /><br>
         <input type="button" id="btnLogin" value="Login" />
-
+        <input type="button" id="btnRegistro" value="Registrarse" />
         <div id="divLoginMensajes"></div>
-
     </div>
-<br>
+
+    <div id="divRegistro" style="display: none;">
+        <h2>Registro de Usuario</h2>
+        <label for="txtRegUsuario">Usuario:</label>
+        <input type="text" id="txtRegUsuario" class="limpiarCaja" /><br>
+        <label for="txtRegContrasenia">Contraseña:</label>
+        <input type="text" id="txtRegContrasenia" class="limpiarCaja" /><br>
+        <label for="txtRegNombre">Nombre:</label>
+        <input type="text" id="txtRegNombre" class="limpiarCaja" /><br>
+        <label for="selRegNivel">Nivel:</label>
+        <select id="selRegNivel">
+            <option value="">Seleccione el nivel</option>
+            <option value="junior">Junior</option>
+            <option value="semiSenior">Semi-Senior</option>
+            <option value="senior">Senior</option>
+        </select><br>
+        <input type="button" id="btnRegistroConfirm" value="Confirmar Registro" />
+        <input type="button" id="btnVolver" value="Volver" />
+        <div id="divRegistroMensajes"></div>
+    </div>
+    <br>
+    <br>
     <div id="divPostulante" class="postulante" style="display: none;">
-        
+
+        <input type="button" id="btnMostrarOfertasDestacadas" value="Mostrar ofertas destacadas" />
         <input type="button" id="btnMostrarOfertas" value="Mostrar ofertas" />
-        <div id="divOfertaDestacada"></div>
+        <input type="button" id="btnMostrarMisPostulaciones" value="Mostrar mis postulaciones" /> <br>
+        <br>
+
+        <label for="txtFiltroPro">Filtrar por nombre:</label><input type="text" id="txtFiltroPro" /><br>
+        <br>
+
+        <div id="divOfertasActivas"></div>
+
+        <div id="divOfertaDestacada" style="display: none;">
+            <h3>Ofertas destacadas</h3>
+            <table id="tblOfertaDestacada" border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Empresa</th>
+                        <th>Nivel</th>
+                        <th>Vacantes</th>
+                        <th>Postulantes</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tblOfertaDestacadaBody"></tbody>
+            </table>
+        </div>
         <div id="divOfertas" style="display: none;">
+            <h3>Ofertas</h3>
             <table id="tblOfertas" border="1">
                 <thead>
                     <tr>
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Empresa</th>
+                        <th>Nivel</th>
                         <th>Vacantes</th>
                         <th>Postulantes</th>
                         <th>Estado</th>
-                        <th>Destacada</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="tblOfertasBody"></tbody>
             </table>
-        
+
+        </div>
+        <div id="divMisPostulaciones" style="display: none;">
+            <h3>Mis postulaciones</h3>
+            <table id="tblMisPostulaciones" border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Empresa</th>
+                        <th>Nivel</th>
+                        <th>Vacantes</th>
+                        <th>Postulantes</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tblMisPostulacionesBody"></tbody>
+            </table>
         </div>
     </div>
 
-<footer style="background-color: black; color: aliceblue; position: absolute; bottom: 0; width: 100%; text-align: center; "> Grupo 4 - Rodrigo Cano - Juan Capoano </footer>
+    <input type="button" id="btnMostrarOfertasAdmin" value="Crear ofertas" style="display: none;" />
+
+    <div id="divAdmin" class="admin" style="display: none;">
+
+        <h2>Crear oferta</h2>
+        <label for="txtTitulo">Título de la oferta: </label> <input type="text" id="txtTitulo"> <br>
+
+        <label for="txtNombre">Nombre de la empresa: </label> <input type="text" id="txtNombre"> <br>
+
+        <label for="txtDesc">Descripción de la oferta: </label> <input type="text" id="txtDesc"> <br>
+
+        <label for="selNivel">Nivel requerido: </label> <select id="selNivel">
+
+            <option value=" ">Seleccione el nivel</option>
+            <option value="junior">Junior</option>
+            <option value="semiSenior">Semi-Senior</option>
+            <option value="senior">Senior</option>
+        </select> <br> <br>
+
+        <label for="selArea">Área de trabajo: </label> <select id="selArea">
+            <option value=" ">Seleccione el área</option>
+            <option value="tecnologia">Tecnología</option>
+            <option value="diseno">Diseño</option>
+            <option value="administracion">Administración</option>
+            <option value="otros">Otros</option>
+        </select> <br>
+        <label for="limPost">Límite de postulaciones</label> <input type="number" id="limPost"> <br>
+        <label for="cantVacantes">Cantidad de vacantes</label> <input type="number" id="cantVacantes"> <br>
+        <label for="cbdestacada">Marcar la oferta como destacada</label> <input type="checkbox" id="cbDestacada"> <br>
+        <input type="button" id="btnCrearOferta" value="Crear Oferta">
+        <div id="divMostrar"></div>
+    
+    
+    </div>
+
+
+
+    <footer
+        style="background-color: black; color: aliceblue; position: absolute; bottom: 0; width: 100%; text-align: center; ">
+        Grupo 4 - Rodrigo Caníbal - Juan Capoanashe </footer>
 
     <script src="./js/objetos.js"></script>
     <script src="./js/sistema.js"></script>

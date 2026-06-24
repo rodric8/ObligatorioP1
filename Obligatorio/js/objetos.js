@@ -23,13 +23,18 @@ class Postulante {
 }
 
 class OfertaLaboral {
-    static idContadorOF = 0;
+    static idContadorOF = 1;
+
     constructor() {
-        this.id = OfertaLaboral.idContadorOF++;
+        this.id = "JOB_OFFER_" + OfertaLaboral.idContadorOF++;
         this.nombre = "";
         this.descripcion = "";
+        this.empresa = "";
+        this.nivel = "";
+        this.vacantes = 0;
+        this.postulantes = 0;
         this.estado = "";
-        this.sueldo = 0;
+        this.destacada = "";
     }
 }
 
